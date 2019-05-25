@@ -17,14 +17,14 @@ ArrayYiC=[0 for i in range(j+1)]
 ArrayFiC=[0 for i in range(j+1)]
 #############################Define base#########################################################
 def f(x,y):
-    r=float(2*y-2*x-1)
+    r=float(2*y-2*x-1)#Funcion f(x,y) CAMBIA ESTA FUNCION SI ES NECESARIO
     return r
 def predictor(i):
-    r= float(ArrayYiC[i]+(h/24)*(55*ArrayFiC[i] -59*ArrayFiC[i-1] + 37*ArrayFiC[i-2]- 9*ArrayFiC[i-3]))
+    r= float(ArrayYiC[i]+(h/24)*(55*ArrayFiC[i] -59*ArrayFiC[i-1] + 37*ArrayFiC[i-2]- 9*ArrayFiC[i-3]))#formula de predictor para Adams Moulton
     return r
     
 def corrector(i):
-    r = float(ArrayYiC[i]+(h/24)*(9*ArrayFiP[i+1] + 19*ArrayFiC[i] - 5*ArrayFiC[i-1] + ArrayFiC[i-2]))
+    r = float(ArrayYiC[i]+(h/24)*(9*ArrayFiP[i+1] + 19*ArrayFiC[i] - 5*ArrayFiC[i-1] + ArrayFiC[i-2]))#formulas de corrector para Adams Moulton
     print("%s %s %s %s %s" % (ArrayYiC[i],ArrayFiP[i+1],ArrayFiC[i],ArrayFiC[i-1],ArrayFiC[i-2]))
     return r
 #################################################################################################
